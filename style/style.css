@@ -1,0 +1,259 @@
+/*==========================
+		Default Settings
+============================*/
+/*css variable*/
+:root{
+	--primary:#ddd;
+	--dark:#333;
+	--light:#fff;
+	--shadow:1px 1px 5px rgba(104,104,104,0.8);
+}
+
+*{
+	box-shadow: border-box;
+	
+}
+a{
+	text-decoration: none;
+}
+li{
+	list-style: none;
+	
+}
+.btn{
+	background-color: var(--dark);
+	color: var(--light);
+	padding: 0.6rem 1.2rem;
+	border: 0;
+	transition: all .3s ease;
+}
+.btn:hover{
+	border-radius: 1rem;
+	
+}
+body{
+	background-color: #ccc;
+	font-family: Arial,Helvetical, sans-serif;
+	color: var(--dark);
+	padding: 30px 50px;
+	line-height: 1.4;
+}
+.wrapper{
+	display: grid;
+	grid-gap: 1.5rem;
+}
+img{
+	max-width: 100%;
+}
+
+/*-----------------------
+	Navigation bar
+-------------------------*/
+.main-nav ul{
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-gap: 1rem;
+	padding: 0;
+	
+		
+
+}
+.main-nav a{
+	display: block;
+	background-color: var(--primary);
+	padding: 0.8rem;
+	font-size: 1.4rem;
+	text-transform: uppercase;
+	text-align: center;
+	color: var(--dark);
+	transition: all .3s ease;
+	font-weight: 500;
+}
+
+.main-nav a:hover{
+	background-color: var(--dark);
+	color: var(--light);
+}
+
+/*-----------------------------
+		Top container
+-------------------------------*/
+.top-container{
+	display: grid;
+	grid-gap: 1.2rem;
+	grid-template-areas: 
+		"showcase showcase top-box-a"
+		"showcase showcase top-box-b";
+}
+
+
+.showcase{
+	grid-area: showcase;
+	min-height: 24rem;
+	padding: 3rem;
+	background-image: url(../images/1-min.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	box-shadow: var(--shadow);
+	
+}
+.showcase h2{
+	font-size: 3rem;
+	text-transform: capitalize;
+	color: var(--light);
+	font-weight: 600;
+	margin-bottom: 0;
+}
+.showcase p{
+	font-size: 1.1rem;
+	color: var(--light);
+}
+/*Top box styling*/
+.top-box{
+	background-color: var(--primary);
+	padding: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	box-shadow: var(--shadow);
+
+}
+.top-box h4{
+	font-size: 1.2rem;
+	margin-bottom: 
+}
+.top-box p{
+	font-size: 2rem;
+	margin-bottom: 
+}
+.top-box-a{
+	grid-area: top-box-a;
+}
+.top-box-b{
+	grid-area: top-box-b;
+}
+
+/*----------------------------x
+		Boxes section
+------------------------------*/
+.boxes{
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+	grid-gap: 1.4rem;
+}
+.box{
+	background-color: var(--primary);
+	text-align: center;
+	padding: 1.4rem;
+	box-shadow: var(--shadow);
+}
+
+/*----------------------------x
+		Boxes section
+------------------------------*/
+.info{
+	display: grid;
+	grid-gap:1.8rem;
+	grid-template-columns: repeat(2,1fr);
+	padding: 3rem;
+	background-color: var(--primary);
+	
+}
+.info>div img{
+	width: 100%;
+}
+
+.info-text h3{
+	text-transform: capitalize;
+	font-size: 2rem;
+	font-weight: 500;
+}
+
+/*----------------------------x
+		Portfolio section
+------------------------------*/
+.portfolio{
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns:repeat(4,minmax(200px,1fr));
+	padding: 2rem 0;
+	
+}
+.portfolio img{
+	width: 100%;
+	box-shadow: var(--shadow);
+}
+
+/*----------------------------x
+		Footer section
+------------------------------*/
+footer{
+	background-color: var(--dark);
+		
+}
+
+footer p{
+	color: var(--light);
+	text-align: center;
+	padding: 0.8rem;
+}
+
+
+/*===================
+	Media Queries
+======================*/
+@media only screen and (max-width: 700px) {
+	body{
+		padding: 0 10px;
+	}
+	.top-container{
+		grid-template-areas: 
+			"showcase showcase"
+			"top-box-a top-box-b";
+		grid-gap: 3rem;
+	}
+	.main-nav ul{
+		grid-template-columns: 1fr;
+	}
+	.boxes{
+		grid-template-columns: repeat(2,1fr);
+	}
+	.portfolio{
+		    grid-template-columns: repeat(2,1fr);
+	}
+	
+	
+}
+
+@media only screen and (max-width: 500px) {
+	
+	.top-container{
+		grid-template-areas: 
+			"showcase "
+			"top-box-a"
+			"top-box-b";
+		
+	}
+	.showcase h2{
+		font-size: 2rem;
+	}
+	
+	.showcase p{
+		font-size: 0.8rem;
+	}
+	.boxes{
+		grid-template-columns: 1fr;
+	}
+	.info{
+		grid-template-columns: 1fr;
+	}
+	.portfolio{
+		    grid-template-columns: 1fr;
+	}
+}
